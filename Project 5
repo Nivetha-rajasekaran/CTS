@@ -1,0 +1,24 @@
+package org.fin;
+
+public class FinancialForecasting {
+
+    // Recursive method to calculate future value
+    public static double calculateFutureValue(double principal, double rate, int years) {
+        // Base case: If no years are left, return the principal amount
+        if (years == 0) {
+            return principal;
+        }
+        // Recursive case: Calculate future value for the remaining years
+        double futureValue = calculateFutureValue(principal, rate, years - 1);
+        return futureValue * (1 + rate);
+    }
+
+    public static void main(String[] args) {
+        double principal = 1000; // Initial investment
+        double rate = 0.05; // Annual interest rate
+        int years = 10; // Number of years
+
+        double futureValue = calculateFutureValue(principal, rate, years);
+        System.out.printf("Future value after %d years: %.2f%n", years, futureValue);
+    }
+}
