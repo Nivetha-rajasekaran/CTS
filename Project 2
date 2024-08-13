@@ -1,0 +1,33 @@
+week 1 ex 
+package org.product;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Invent inventory = new Invent();
+
+        // Adding products
+        Product product1 = new Product("101", "Laptop", 10, 999.99);
+        Product product2 = new Product("102", "Smartphone", 20, 499.99);
+
+        inventory.addProduct(product1);
+        inventory.addProduct(product2);
+
+        System.out.println("Products after adding:");
+        inventory.displayProducts();
+
+        // Updating a product
+        product1.setPrice(899.99);
+        inventory.updateProduct(product1);
+
+        System.out.println("\nProducts after updating:");
+        inventory.displayProducts();
+
+        // Deleting a product
+        inventory.deleteProduct("102");
+
+        System.out.println("\nProducts after deleting:");
+        inventory.displayProducts();
+    }
+}
